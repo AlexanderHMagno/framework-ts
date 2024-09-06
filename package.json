@@ -1,0 +1,24 @@
+{
+  "name": "12-web-app",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start:parcel": "npx parcel index.html",
+    "start:db": "json-server -w db.json",
+    "start": "concurrently pnpm:start:*"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "axios": "^1.7.7",
+    "concurrently": "^8.2.2",
+    "json-server": "1.0.0-beta.2",
+    "nodemon": "^3.1.4"
+  },
+  "devDependencies": {
+    "buffer": "^5.5.0||^6.0.0",
+    "process": "^0.11.10"
+  }
+}
