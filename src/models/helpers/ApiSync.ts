@@ -4,7 +4,7 @@ interface Syncable {
   id?: string;
 }
 
-export class Sync<Schema extends Syncable> {
+export class ApiSync<Schema extends Syncable> {
   constructor(private dataURL: string) {}
 
   fetch(id: string): AxiosPromise {
