@@ -1,12 +1,4 @@
-// 3) This class will contain the following ideas
-// 	- data as interfact UserProps
-// 	- get (propName string): string | number
-// 	- set (update UserProps):void
-// 	- on (eventName string, callback: () =>{}
-// 	- trigger (eventName :string) : void
-//         - fetch() : promise
-// 	- save() : Promise
-
+import { Collection } from './Collection';
 import { ApiSync } from './helpers/ApiSync';
 import { Attributes } from './helpers/Attributes';
 import { Eventing } from './helpers/Eventing';
@@ -18,6 +10,8 @@ export interface UserProps {
   age?: number;
 }
 
+const rootUrl = 'http://localhost:3000/users';
+
 export class User extends Model<UserProps> {
   //This is the default way to create a user, hardcoding the classes to be used to represent
   //the event system, attributes and the storage
@@ -25,7 +19,13 @@ export class User extends Model<UserProps> {
     return new User(
       new Eventing(),
       new Attributes<UserProps>(data),
-      new ApiSync<UserProps>('http://localhost:3000/users')
+      new ApiSync<UserProps>(rootUrl)
+    );
+  }
+
+  static getAllUsers() {
+    return new Collection<User, UserProps>(rootUrl, (json: UserProps) =>
+      User.buildUser(json)
     );
   }
 }

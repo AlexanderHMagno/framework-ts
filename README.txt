@@ -31,3 +31,14 @@ will allow us to reuse this code, in this case we can approach this with inherin
 11) We are gonna call this class Model<T> and will use generics to allow multiple data to be stored by sync and Attributes (different Entities will have different schemas)
 12) Once you have achieve this goal, the idea would be to create a User Collection class to request via API the information of a group of entities (for instance /users)
 13) Remember to create this as abstract as possible using Generics, and also inject an Eventing class to trigger changes, and fetch class to get information from the API and set it in an array of entities called Data
+14) Add a fetch methods that relies on Axios to call the json-serve and get a full list of users to return as type users
+15) Update this class to make it generics
+16) Add the Collection class to the User class to return as a static class a list of all users in the application.
+17) this method should return type of Collection<User, UserProps>
+
+
+View)
+
+18) The view will be controlled by 3 classes (the wrapper User Details), (The viewable to display Data), The action area (To update information controlled by a form), That way 
+every class would have its own responsability
+19) The best way to start this generic class as Form is to attach to a specific example like start building the USERFORM and from there we can transform this in a generic version
