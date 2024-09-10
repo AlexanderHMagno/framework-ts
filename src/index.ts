@@ -1,7 +1,13 @@
-import { User } from './models/Users';
+// import { User } from './models/Users';
 
-const collection = User.getAllUsers();
+import { UserForm } from './views/UserForm';
 
-collection.on('change', () => console.log(collection.data));
+// const collection = User.getAllUsers();
 
-collection.fetch();
+// collection.on('change', () => console.log(collection.data));
+
+// collection.fetch();
+
+const injector = new UserForm(document.getElementById('root') as HTMLElement);
+
+injector.render();

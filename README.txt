@@ -42,3 +42,12 @@ View)
 18) The view will be controlled by 3 classes (the wrapper User Details), (The viewable to display Data), The action area (To update information controlled by a form), That way 
 every class would have its own responsability
 19) The best way to start this generic class as Form is to attach to a specific example like start building the USERFORM and from there we can transform this in a generic version
+20) Adding Model Properties and display in the dom
+21) Biding events on classNames rather on the selector type
+22) If a method affects directly a Class is better to have that method in that class and thru delegation we modified that clas,
+rather than modifying this externaly
+22 a) create a button with a random age setter
+23) On change update or rerender the  HTML (using the eventing system)
+24)Read the input value and update the name of the user
+25) Check if the ts -init has been created an enacted the Strict Null Check system 
+
