@@ -1,22 +1,30 @@
+import { User } from '../models/Users';
+
 export class UserForm {
   //Parent element
-  eventList: { [key: string]: () => void } = {};
-  constructor(public parent: HTMLElement) {}
+  constructor(public parent: HTMLElement, public model: User) {
+    this.model.on('change', () => {
+      this.render();
+    });
+  }
 
   addEventListeners(): { [key: string]: () => void } {
     return {
-      'click:button': this.onButtonClick,
-      'mouseout:input': this.onMouseOut,
+      'click:.set-age': this.handleNewRandomAge,
+      'click:.set-name': this.handleNewName,
     };
   }
 
-  onButtonClick() {
-    console.log('im here');
-  }
+  handleNewRandomAge = () => {
+    this.model.generateRandomAge();
+  };
 
-  onMouseOut() {
-    console.log('ale');
-  }
+  handleNewName = () => {
+    const name = document.getElementById('input-name') as HTMLInputElement;
+    if (name) {
+      this.model.set({ name: name.value });
+    }
+  };
 
   bindEvents(fragment: DocumentFragment) {
     const eventsMap = this.addEventListeners();
@@ -33,8 +41,11 @@ export class UserForm {
     return `
     <div>
       <h1>UserForm</h1>
-      <input type="text" />
-      <button>Click me</button>
+      <p>User Name: ${this.model.get('name')}</p>
+      <p>User age: ${this.model.get('age')}</p>
+      <input type="text" id="input-name" />
+      <button class="set-name">Update name</button>
+      <button class="set-age">Generate Random Age</button>
     </div>
   `;
   }
@@ -43,6 +54,7 @@ export class UserForm {
     const newElement = document.createElement('template');
     newElement.innerHTML = this.template();
     this.bindEvents(newElement.content);
+    this.parent.innerHTML = '';
     this.parent.append(newElement.content);
   }
 }

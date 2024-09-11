@@ -44,7 +44,7 @@ every class would have its own responsability
 19) The best way to start this generic class as Form is to attach to a specific example like start building the USERFORM and from there we can transform this in a generic version
 20) Adding Model Properties and display in the dom
 21) Biding events on classNames rather on the selector type
-22) If a method affects directly a Class is better to have that method in that class and thru delegation we modified that clas,
+22) If a method affects directly a Class is better to have that method in that class and thru delegation we modified that class,
 rather than modifying this externaly
 22 a) create a button with a random age setter
 23) On change update or rerender the  HTML (using the eventing system)
