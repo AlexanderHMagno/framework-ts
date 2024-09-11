@@ -50,10 +50,10 @@ rather than modifying this externaly
 23) On change update or rerender the  HTML (using the eventing system)
 24)Read the input value and update the name of the user
 25) Check if the ts -init has been created an enacted the Strict Null Check system 
+26) Add a save button an store the Model 
 
 Pending Task
 
-26) Add a save button an store the Model 
 27) Reusable View Logic (The first part is to create an specific view that works) now abstract the methods of this class (using composition or inheritance create a View class abstract because we do
 no need to instantiate this )
 28) Remember to extract everything to the View Abstract class and from there extends to the specific model

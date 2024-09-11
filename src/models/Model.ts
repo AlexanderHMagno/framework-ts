@@ -16,7 +16,7 @@ interface Sync<T> {
   save(data: T): AxiosPromise;
 }
 
-interface hasId {
+export interface hasId {
   id?: string;
 }
 export class Model<T extends hasId> {
