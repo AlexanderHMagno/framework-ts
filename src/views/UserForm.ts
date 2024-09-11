@@ -3,10 +3,14 @@ import { User } from '../models/Users';
 export class UserForm {
   //Parent element
   constructor(public parent: HTMLElement, public model: User) {
+    this.bindModel();
+  }
+
+  bindModel = () => {
     this.model.on('change', () => {
       this.render();
     });
-  }
+  };
 
   addEventListeners(): { [key: string]: () => void } {
     return {
