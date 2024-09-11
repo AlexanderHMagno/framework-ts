@@ -10,15 +10,23 @@ export class UserForm {
     this.model.on('change', () => {
       this.render();
     });
+
+    this.model.on('save', () => {
+      window.alert('User has been saved');
+    });
   };
 
   addEventListeners(): { [key: string]: () => void } {
     return {
       'click:.set-age': this.handleNewRandomAge,
       'click:.set-name': this.handleNewName,
+      'click:.save': this.handleSave,
     };
   }
 
+  handleSave = () => {
+    this.model.save();
+  };
   handleNewRandomAge = () => {
     this.model.generateRandomAge();
   };
@@ -50,6 +58,7 @@ export class UserForm {
       <input type="text" id="input-name" />
       <button class="set-name">Update name</button>
       <button class="set-age">Generate Random Age</button>
+      <button class="save">Save User</button>
     </div>
   `;
   }

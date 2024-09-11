@@ -59,6 +59,7 @@ export class Model<T extends hasId> {
     this.sync
       .save(data)
       .then((response: AxiosResponse) => {
+        this.set(response.data);
         this.trigger('save');
       })
       .catch((e: Error) => this.trigger('error'));
