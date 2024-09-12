@@ -22,6 +22,8 @@ export class Collection<T, K> {
           this.data.push(this.deserialize(json))
         );
       })
-      .finally(() => this.trigger('change'));
+      .finally(() => {
+        this.trigger('change');
+      });
   }
 }
