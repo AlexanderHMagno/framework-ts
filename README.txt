@@ -55,12 +55,13 @@ rather than modifying this externaly
 no need to instantiate this )
 28) Remember to extract everything to the View Abstract class and from there extends to the specific model
 29) The view model should have a Generic that points to the class type and the expected Properties
-
-Pending Task
-
 30) Now remember that one of the SOLID principles is to create classes with single responsabilities and we can create multiple classNames
 to accomplish this, so with the help of the Generic View class, create 3 new classes that extends VIEW UserEdit, UserShow and USERFORM
 	- UserEdit will be the wrapper
 	- UserShow responsability is to show the content and render 
 	- UserForm will be responsable of managing actions on the data. 
-	
+
+Pending Task
+
+
+31)

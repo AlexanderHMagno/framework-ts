@@ -22,7 +22,7 @@ export abstract class View<T extends Model<K>, K extends hasId> {
     });
 
     this.model.on('save', () => {
-      window.alert('Entity has been saved');
+      console.log('Entity has been saved');
     });
   };
 
