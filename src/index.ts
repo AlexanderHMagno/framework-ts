@@ -1,15 +1,8 @@
 import { User } from './models/Users';
-
-import { UserForm } from './views/UserForm';
-
-// const collection = User.getAllUsers();
-
-// collection.on('change', () => console.log(collection.data));
-
-// collection.fetch();
+import { UserEdit } from './views/User/UserEdit';
 
 const Alexander: User = User.buildUser({ name: 'Alexander', age: 22 });
-const injector = new UserForm(
+const injector = new UserEdit(
   document.getElementById('root') as HTMLElement,
   Alexander
 );

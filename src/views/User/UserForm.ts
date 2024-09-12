@@ -1,5 +1,5 @@
-import { User, UserProps } from '../models/Users';
-import { View } from './View';
+import { User, UserProps } from '../../models/Users';
+import { View } from '../View';
 
 export class UserForm extends View<User, UserProps> {
   //Override
@@ -28,15 +28,14 @@ export class UserForm extends View<User, UserProps> {
 
   template(): string {
     return `
-    <div>
-      <h1>UserForm</h1>
-      <p>User Name: ${this.model.get('name')}</p>
-      <p>User age: ${this.model.get('age')}</p>
-      <input type="text" id="input-name" />
-      <button class="set-name">Update name</button>
-      <button class="set-age">Generate Random Age</button>
-      <button class="save">Save User</button>
-    </div>
+      <div>
+        <input type="text" id="input-name" placeholder="${this.model.get(
+          'name'
+        )}" />
+        <button class="set-name">Update name</button>
+        <button class="set-age">Generate Random Age</button>
+        <button class="save">Save User</button>
+      </div>
   `;
   }
 }
